@@ -1,4 +1,4 @@
-package com.hopskipdrive.coordinatorexample
+package com.hopskipdrive.coordinatorexample.util
 
 import androidx.fragment.app.Fragment
 import com.hopskipdrive.coordinatorexample.base.BaseViewModel

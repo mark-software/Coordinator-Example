@@ -1,4 +1,4 @@
-package com.hopskipdrive.coordinatorexample
+package com.hopskipdrive.coordinatorexample.ui
 
 import android.os.Parcelable
 import androidx.lifecycle.ViewModelProvider

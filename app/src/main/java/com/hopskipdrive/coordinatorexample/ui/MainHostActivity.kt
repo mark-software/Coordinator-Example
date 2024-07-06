@@ -3,7 +3,6 @@ package com.hopskipdrive.coordinatorexample.ui
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import com.hopskipdrive.coordinatorexample.R
-import com.hopskipdrive.coordinatorexample.TestCoordinator
 import com.hopskipdrive.coordinatorexample.base.BaseActivity
 import com.hopskipdrive.coordinatorexample.contract.Coordinator
 import com.hopskipdrive.coordinatorexample.contract.CoordinatorHost

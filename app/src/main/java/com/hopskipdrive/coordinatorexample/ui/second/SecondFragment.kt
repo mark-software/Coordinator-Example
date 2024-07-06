@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hopskipdrive.coordinatorexample.databinding.FragmentSecondBinding
-import com.hopskipdrive.coordinatorexample.hostedViewModel
+import com.hopskipdrive.coordinatorexample.util.hostedViewModel
 import com.hopskipdrive.coordinatorexample.util.DialogUtil
 
 /**
