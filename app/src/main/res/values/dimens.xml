@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <integer name="fragment_animation_duration">200</integer>
+</resources>
