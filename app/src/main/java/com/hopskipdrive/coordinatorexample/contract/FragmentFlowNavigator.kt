@@ -36,11 +36,11 @@ class FragmentFlowNavigator<S: FlowScreen>(
     }
 
     override fun replace(screen: S) {
-        executeTransaction(screen, addToBackStack = false)
+        executeTransaction(screen, replaceScreen = true)
     }
 
     override fun navigateTo(screen: S) {
-        executeTransaction(screen, addToBackStack = true)
+        executeTransaction(screen, replaceScreen = false)
     }
 
     override fun close() {
@@ -55,20 +55,23 @@ class FragmentFlowNavigator<S: FlowScreen>(
 
     private fun executeTransaction(
         screen: S,
-        addToBackStack: Boolean
+        replaceScreen: Boolean
     ) {
         val transaction = Runnable {
-            val transaction = fm.beginTransaction()
+            if (replaceScreen && fm.backStackEntryCount > 0) {
+                fm.popBackStack()
+                navListener?.onScreenPopped()
+            }
+
             val fragment = fragmentFactory(screen)
-            if (addToBackStack) {
-                transaction.setCustomAnimations(
+            fm.beginTransaction()
+                .setCustomAnimations(
                     R.anim.slide_in_right, R.anim.slide_out_left,
                     R.anim.slide_in_left, R.anim.slide_out_right
                 )
-            }
-            transaction.replace(containerViewId, fragment, screen.screenKey)
-            if (addToBackStack) { transaction.addToBackStack(null) }
-            transaction.commit()
+                .replace(containerViewId, fragment, screen.screenKey)
+                .addToBackStack(screen.screenKey)
+                .commit()
             navListener?.onScreenPushed(screen)
         }
         handleTransaction(transaction)

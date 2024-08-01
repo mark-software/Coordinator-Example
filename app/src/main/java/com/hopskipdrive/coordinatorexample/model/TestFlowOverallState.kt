@@ -3,7 +3,6 @@ package com.hopskipdrive.coordinatorexample.model
 import android.os.Parcelable
 import com.hopskipdrive.coordinatorexample.ui.second.SecondViewModel
 import kotlinx.parcelize.Parcelize
-import java.util.Stack
 
 /**
  * Created by Mark Miller.
@@ -12,7 +11,7 @@ import java.util.Stack
 data class TestFlowOverallState(
     var clickedSecondFragmentButton: Boolean = false,
     var someOtherProperty: String = "",
-    val screenStack: Stack<MyScreenState> = Stack()
+    val screenStack: StackParcelable<MyScreenState> = StackParcelable()
 ): Parcelable
 
 fun TestFlowOverallState.toSecondVmState(): SecondViewModel.SecondSampleState {

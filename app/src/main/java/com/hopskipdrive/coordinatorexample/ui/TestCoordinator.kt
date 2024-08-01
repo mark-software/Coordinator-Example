@@ -45,9 +45,7 @@ class TestCoordinator(
 
     override fun goBack() = flowNavigator.close()
 
-    override fun onSaveInstanceState(): Parcelable? {
-        return overallState
-    }
+    override fun onSaveInstanceState() = overallState
 
     override fun onRestoreInstanceState(savedState: Parcelable) {
         if (savedState is TestFlowOverallState) {
