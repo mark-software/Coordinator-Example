@@ -10,6 +10,9 @@ import com.hopskipdrive.coordinatorexample.contract.FragmentFlowNavigator
 import com.hopskipdrive.coordinatorexample.contract.ScreenNavigationListener
 import com.hopskipdrive.coordinatorexample.domain.DefaultDoSomethingUseCase
 import com.hopskipdrive.coordinatorexample.domain.DifferentDoSomethingUseCase
+import com.hopskipdrive.coordinatorexample.extensions.peek
+import com.hopskipdrive.coordinatorexample.extensions.pop
+import com.hopskipdrive.coordinatorexample.extensions.push
 import com.hopskipdrive.coordinatorexample.model.CoordinatorEvent
 import com.hopskipdrive.coordinatorexample.model.MyScreenState
 import com.hopskipdrive.coordinatorexample.model.SingleEvent

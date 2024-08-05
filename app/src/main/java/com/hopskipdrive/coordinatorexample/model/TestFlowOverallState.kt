@@ -11,7 +11,7 @@ import kotlinx.parcelize.Parcelize
 data class TestFlowOverallState(
     var clickedSecondFragmentButton: Boolean = false,
     var someOtherProperty: String = "",
-    val screenStack: StackParcelable<MyScreenState> = StackParcelable()
+    val screenStack: ArrayDeque<MyScreenState> = ArrayDeque()
 ): Parcelable
 
 fun TestFlowOverallState.toSecondVmState(): SecondViewModel.SecondSampleState {
